@@ -1,23 +1,12 @@
-from django.db import models
+sfrom django.db import models
 
 # Create your models here.
 
 class Contato(models.Model):
-
-# Opcoes do campo estado civil
-# primeiro valor da tupla é o que vai no banco e o segundo o que vai na tela
-
-    ESTADO_CIVIS = [
-        ('S','Solteiro'), 
-        ('C','Casado'), 
-        ('D','Divorciado'), 
-        ('V','Viúvo')
-        ]
-
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=200)
     apelido = models.CharField(max_length=30, blank=True, null=True)
     email = models.EmailField(max_length=100)
-    data_nascimento = models.DateField(verbose_name= 'Data de Nascença')
+    data_nascimento = models.DateField(verbose_name= 'Data de Nascimento')
     endereco = models.CharField(max_length=200, verbose_name= 'Endereço')
     numero = models.CharField(max_length=10)
     complemento = models.CharField(max_length=50, blank=True, null=True)
